@@ -12,10 +12,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <Carousel>
-          <h1>1</h1>
-          <h1>2</h1>
-          <h1>3</h1>
-          <h1>4</h1>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => <h1 key={i}>{i}</h1>)}
         </Carousel>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
