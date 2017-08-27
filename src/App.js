@@ -11,7 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <Carousel>
+        <Carousel slidesToShow={1}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => <h1 key={i}>{i}</h1>)}
         </Carousel>
         <p className="App-intro">
