@@ -1,22 +1,18 @@
 {
-  "name": "rc-carousel",
+  "name": "reaction-carousel",
   "version": "0.1.0",
   "private": false,
   "main": "lib/index.js",
-    "repository": {
+  "repository": {
     "type": "git",
-    "url": "https://github.com/alirezavalizade/rc-carousel.git"
+    "url": "git+https://github.com/alirezavalizade/reaction-carousel.git"
   },
-  "author": {
-    "name": "alireza valizade",
-    "email": "alirezavalizade0@gmail.com",
-    "twitter": "https://twitter.com/alirezavlizade"
-  },
-  "license": "ISC",
+  "author": "alireza valizade <alirezavalizade0@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alirezavalizade/rc-carousel/issues"
+    "url": "https://github.com/alirezavalizade/reaction-carousel/issues"
   },
-  "homepage": "https://github.com/alirezavalizade/rc-carousel",
+  "homepage": "https://github.com/alirezavalizade/reaction-carousel",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
@@ -112,5 +108,14 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6"
-  }
+  },
+  "description": "a simple carousel for react",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "carousel"
+  ]
 }

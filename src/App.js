@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Carousel from './node_modules/rc-carousel';
+import Carousel from './node_modules/reaction-carousel';
 
 const fillArray = (value, len) => {
   if (len === 0) return [];
