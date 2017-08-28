@@ -20,20 +20,13 @@
     }
     .react-carousel-item{
         float: left;
-        background: green;
-        min-height: 300px;
-    }
-    .react-carousel-item:nth-child(1){
-        background: red
-    }
-    .react-carousel-item:nth-child(2){
-        background: blue
-    }
-    .react-carousel-item:nth-child(3){
-        background: gray
-    }
-    .react-carousel-item:nth-child(4){
-        background: yellow
+        min-height: 50px;
+        box-sizing: border-box;
+        img{
+            -webkit-user-drag: none;
+            min-width: 100%;
+            display: block;
+        }
     }
  }
 .react-carousel-arrows{
@@ -57,23 +50,17 @@
 .react-carousel-dots {
       list-style: none;
       margin: 20px auto;
-      &::after, &::before{
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0;
-    }
+      text-align: center;
       li {
-         float: left;
-         width: 20px;
-         height:20px;
-         background: #000;
+         display: inline-block;
+         width: 14px;
+         height:14px;
+         margin-left: 10px;
+         background: rgba(0, 0, 0, 0.6);
          border-radius: 50%;
          border: 2px solid transparent;
          &.active{
-            border-color: red
+            background-color: #000;
          }
       }
     }
