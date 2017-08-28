@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import Carousel from './node_modules/react-carousel';
 
+const fillArray = (value, len) => {
+  if (len === 0) return [];
+  let a = [value];
+  while (a.length * 2 <= len) a = a.concat(a);
+  if (a.length < len) a = a.concat(a.slice(0, len - a.length));
+  return a;
+};
+
 class App extends Component {
   render() {
     return (
@@ -12,7 +20,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <Carousel slidesToShow={1}>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => <h1 key={i}>{i}</h1>)}
+          {[...fillArray('https://unsplash.it/1200/310?random', 10)].map(i => <img key={i} src={i} alt={i} />)}
         </Carousel>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
