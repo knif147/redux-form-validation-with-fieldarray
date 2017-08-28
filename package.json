@@ -3,6 +3,20 @@
   "version": "0.1.0",
   "private": false,
   "main": "lib/index.js",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/alirezavalizade/react-carousel.git"
+  },
+  "author": {
+    "name": "alireza valizade",
+    "email": "alirezavalizade0@gmail.com",
+    "twitter": "https://twitter.com/alirezavlizade"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alirezavalizade/react-carousel/issues"
+  },
+  "homepage": "https://github.com/alirezavalizade/react-carousel",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
