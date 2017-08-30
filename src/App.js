@@ -12,14 +12,20 @@ const fillArray = (value, len) => {
 };
 
 class App extends Component {
+
+  state = {
+    visible: false
+  };
+
   render() {
     return (
       <div className="App">
+        <h1>ad</h1>
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img onClick={() => this.setState({ visible: !this.state.visible })} src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <Carousel slidesToShow={1}>
+        <Carousel slidesToShow={1} transitionTime={1000}>
           {[...fillArray('https://unsplash.it/1200/310?random', 10)].map(i => <img key={i} src={i} alt={i} />)}
         </Carousel>
         <p className="App-intro">
