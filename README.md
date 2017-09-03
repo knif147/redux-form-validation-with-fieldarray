@@ -14,7 +14,7 @@ yarn:
 yarn add reaction-carousel
 ```
 
-⚠️ Also you should add .scss file style and fonts 
+⚠️ Also you should add .scss file for style and fonts 
 
 ```bash
 npm install slick-carousel
