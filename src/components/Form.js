@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Validation from 'redux-form-fieldarray-validation';
-import { reduxForm, Field } from 'redux-form';
-
+import { reduxForm, FieldArray } from 'redux-form';
+import FieldArrayComponent from './FieldArrayComponent';
 
 @reduxForm({
   form: 'test'
@@ -18,11 +18,9 @@ class Form extends PureComponent {
     console.log(Validation());
     return (
       <form>
-        <Field
+        <FieldArray
           name="name"
-          component="input"
-          type="text"
-          placeholder="Search by id, name"
+          component={FieldArrayComponent}
         />
         <button onClick={handleSubmit}>submit form</button>
       </form>
