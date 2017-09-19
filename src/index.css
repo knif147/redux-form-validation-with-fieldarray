@@ -10,3 +10,9 @@ body {
 .underline{
   text-decoration: underline
 }
+.danger{
+  color:red;font-size: 12px
+}
+input{
+  margin-top: 30px
+}

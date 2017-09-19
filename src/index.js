@@ -6,9 +6,8 @@ import './index.css';
 import Store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-const StoreInstance = Store();
 
-console.log(StoreInstance.getState());
+const StoreInstance = Store();
 
 ReactDOM.render(
   <Provider store={StoreInstance}>

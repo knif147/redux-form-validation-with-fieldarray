@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
+import Input from './Input';
 
 export default class FieldArrayComponent extends PureComponent {
 
@@ -14,8 +15,12 @@ export default class FieldArrayComponent extends PureComponent {
       <div>
         {fields.map((item, index) =>
           [<div key={index}>
-            <Field name={`${item}.name`} component="input" label="attribute name" />
-            <Field name={`${item}.value`} component="input" label="attribute value" />
+            <Field
+              name={`${item}.name`}
+              component={Input}
+              placeholder="name"
+            />
+            <Field name={`${item}.value`} component={Input} placeholder="value" />
             <button
               className="button-icon remove-pd xs-pull-left"
               type="button"
@@ -28,7 +33,7 @@ export default class FieldArrayComponent extends PureComponent {
         <br />
         <h3 className="cursor underline">
           <span onClick={() => fields.push({})}>
-            Add more attributes
+            Add new line
           </span>
         </h3>
       </div>

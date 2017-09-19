@@ -1,11 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Validation from 'redux-form-fieldarray-validation';
-import { reduxForm, FieldArray } from 'redux-form';
+import { reduxForm, FieldArray, Field } from 'redux-form';
 import FieldArrayComponent from './FieldArrayComponent';
+import validate from './validation';
+import Input from './Input';
 
 @reduxForm({
-  form: 'test'
+  form: 'SomeForm',
+  validate,
+  initialValues: {
+    people: [{}]
+  }
 })
 
 class Form extends PureComponent {
@@ -15,11 +20,23 @@ class Form extends PureComponent {
 
   render() {
     const { handleSubmit } = this.props;
-    console.log(Validation());
     return (
       <form>
+        <div>
+          <Field
+            name="firstname"
+            component={Input}
+            placeholder="firstname"
+          />
+          <Field
+            name="lastname"
+            component={Input}
+            placeholder="lastname"
+          />
+        </div>
+        <br />
         <FieldArray
-          name="name"
+          name="people"
           component={FieldArrayComponent}
         />
         <button onClick={handleSubmit}>submit form</button>
