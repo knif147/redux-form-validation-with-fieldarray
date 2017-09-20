@@ -22,6 +22,7 @@ import { createReduxFormValidator, validations } from 'redux-form-validation-wit
 const validate = createReduxFormValidator({
   firstname: [validations.required, validations.alphabet],
   lastname: [validations.required, validations.alphabet],
+  // This is for FieldArray components
   people: {
     name: [validations.required, validations.alphabet],
     value: [validations.required]
