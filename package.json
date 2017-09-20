@@ -1,6 +1,6 @@
 {
   "name": "redux-form-validation-with-fieldarray",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "lib/index.js",
   "repository": {
@@ -115,13 +115,15 @@
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6"
   },
-  "description": "a simple carousel for react",
+  "description": "Easy validation for redux-form's fields(** And support FieldArray **)",
   "directories": {
     "lib": "lib"
   },
   "keywords": [
     "react",
     "reactjs",
-    "carousel"
+    "redux",
+    "redux-form",
+    "validation"
   ]
 }
