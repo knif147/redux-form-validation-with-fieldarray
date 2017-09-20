@@ -17,19 +17,17 @@ yarn add redux-form-validation-with-fieldarray
 
 This is validate.js:
 ```js
-import memoize from 'lru-memoize';
-import { createValidator, required, alphabet } from 'redux-form-fieldarray-validation';
+import { createReduxFormValidator, validations } from 'redux-form-validation-with-fieldarray';
 
-const validate = createValidator({
-  firstname: [required, alphabet],
-  lastname: [required, alphabet],
-  // This is for FieldArray component
+const validate = createReduxFormValidator({
+  firstname: [validations.required, validations.alphabet],
+  lastname: [validations.required, validations.alphabet],
   people: {
-    name: [required, alphabet],
-    value: [required]
+    name: [validations.required, validations.alphabet],
+    value: [validations.required]
   },
 });
-export default memoize(10)(validate);
+export default validate;
 
 ```
 

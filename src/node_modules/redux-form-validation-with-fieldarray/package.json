@@ -1,0 +1,5 @@
+{
+ "private": true,
+ "name": "redux-form-validation-with-fieldarray",
+ "main": "./index.js"
+}
