@@ -43,6 +43,7 @@ import validate from './validation';
 
 @reduxForm({
   form: 'SomeForm',
+  // pass our validation file
   validate,
   initialValues: {
     people: [{}]
