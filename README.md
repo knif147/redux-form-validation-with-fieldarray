@@ -17,6 +17,7 @@ yarn add redux-form-validation-with-fieldarray
 
 This is validate.js:
 ```js
+
 import { createReduxFormValidator, validations } from 'redux-form-validation-with-fieldarray';
 
 const validate = createReduxFormValidator({
@@ -34,6 +35,7 @@ export default validate;
 
 And in your form component:
 ```js
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm, FieldArray, Field } from 'redux-form';
@@ -84,5 +86,33 @@ class Form extends PureComponent {
 
 export default Form;
 
+```
+
+Add your custom validations
+
+```js
+
+const isEmpty = value => value === undefined || value === null || value === '';
+
+function required(value) {
+  if (isEmpty(value)) {
+    return 'Required';
+  }
+  return null;
+}
+
+function alphabet(value) {
+  if (!/^[a-zA-Z\s]+$/.test(value)) {
+    return 'Alphabet';
+  }
+  return null;
+}
+
+export function integer(value) {
+  if (!Number.isInteger(Number(value))) {
+    return 'Integer Only';
+  }
+  return null;
+}
 
 ```
