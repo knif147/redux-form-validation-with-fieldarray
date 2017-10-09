@@ -2,14 +2,15 @@ import { createReduxFormValidator, validations } from 'redux-form-validation-wit
 
 const validate = createReduxFormValidator({
   firstname: [validations.required, validations.alphabet],
-  lastname: (v) => {
-    if (v > 0) {
-      return [validations.required, validations.alphabet];
-    }
-    return [];
+  lastname: (lastname, data) => {
+    console.log('lastname, data', lastname, data);
+    return [validations.required];
   },
   people: {
-    name: [validations.required, validations.alphabet],
+    name: (name) => {
+      console.log(name);
+      return [validations.required, validations.alphabet];
+    },
     value: [validations.required]
   },
 });
