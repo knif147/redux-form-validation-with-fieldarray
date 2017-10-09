@@ -8,7 +8,7 @@ const validate = createReduxFormValidator({
   },
   people: {
     name: (name) => {
-      console.log(name);
+      console.log('name', name);
       return [validations.required, validations.alphabet];
     },
     value: [validations.required]
