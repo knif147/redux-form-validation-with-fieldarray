@@ -9,7 +9,7 @@ import Input from './Input';
   form: 'SomeForm',
   validate,
   initialValues: {
-    people: [{}]
+    children: [{}]
   }
 })
 
