@@ -16,11 +16,30 @@ yarn add redux-form-validation-with-fieldarray
 
 ### Example
 
-You can pass a function and access to values (maybe needed) or pass an array with validation functions.
-You can write your custom functions.
-You can access to another values from a field.
-Note: if you want pass a function, your function should return an array.
-This is a validation example:
+You can pass a function and access to values (maybe needed) or pass an array with validation functions. <br />
+You can write your custom functions. <br />
+You can access to another values from a field. <br />
+Note: if you want pass a function, your function should return an array. <br />
+We have two validations example.
+
+```js
+
+import { createReduxFormValidator, validations } from 'redux-form-validation-with-fieldarray';
+
+const validate = createReduxFormValidator({
+  firstname: [validations.required, validations.alphabet],
+  lastname: [validations.required, validations.alphabet],
+  // This is for FieldArray components
+  children: {
+    name: [validations.required, validations.alphabet],
+    phone_number: [validations.required, validations.integer]
+  },
+});
+export default validate;
+
+```
+
+This is an example that how you can access to form values:
 
 ```js
 
@@ -30,7 +49,7 @@ const validate = createReduxFormValidator({
   firstname: [validations.required, validations.alphabet],
   lastname: (lastname, formData) => {
     // you can access to value from first parameter and all form data from second parameter
-    // this is just dummy example
+    // this is just dummy example of using custom validation
     const validationArray = [validations.required];
     if (lastname && ((lastname.indexOf('123')) || (lastname.indexOf('123') === 0))) {
       validationArray.push(validations.alphabet);
