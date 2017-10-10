@@ -48,8 +48,10 @@ import { createReduxFormValidator, validations } from 'redux-form-validation-wit
 const validate = createReduxFormValidator({
   firstname: [validations.required, validations.alphabet],
   lastname: (lastname, formData) => {
+
     // you can access to value from first parameter and all form data from second parameter
     // this is just dummy example of using custom validation
+
     const validationArray = [validations.required];
     if (lastname && ((lastname.indexOf('123')) || (lastname.indexOf('123') === 0))) {
       validationArray.push(validations.alphabet);
@@ -57,11 +59,14 @@ const validate = createReduxFormValidator({
     console.log(lastname, formData);
     return validationArray;
   },
+
   // This is for FieldArray components
   children: {
     name: (name, formData, index) => {
+
       // in FieldArray item you can access to value from first parameter and all form data from second parameter
       // and access to index of item from third parameter.
+      
       console.log(name, formData, index);
       return [validations.required, validations.alphabet];
     },
