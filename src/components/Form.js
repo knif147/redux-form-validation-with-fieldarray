@@ -36,7 +36,7 @@ class Form extends PureComponent {
         </div>
         <br />
         <FieldArray
-          name="people"
+          name="children"
           component={FieldArrayComponent}
         />
         <button onClick={handleSubmit}>submit form</button>

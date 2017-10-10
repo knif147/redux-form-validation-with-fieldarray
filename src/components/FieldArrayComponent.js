@@ -20,7 +20,7 @@ export default class FieldArrayComponent extends PureComponent {
               component={Input}
               placeholder="name"
             />
-            <Field name={`${item}.value`} component={Input} placeholder="value" />
+            <Field name={`${item}.phone_number`} component={Input} placeholder="phone_number" />
             <button
               className="button-icon remove-pd xs-pull-left"
               type="button"
