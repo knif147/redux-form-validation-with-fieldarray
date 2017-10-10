@@ -3,6 +3,7 @@
 Easy validation for redux-form's fields(** And support FieldArray **)
 
 ### Installation
+
 npm:
 ```bash
 npm install redux-form-validation-with-fieldarray
@@ -15,18 +16,37 @@ yarn add redux-form-validation-with-fieldarray
 
 ### Example
 
-This is validate.js:
+You can pass a function and access to values (maybe needed) or pass an array with validation functions.
+You can write your custom functions.
+You can access to another values from a field.
+Note: if you want pass a function, your function should return an array.
+This is a validation example:
+
 ```js
 
 import { createReduxFormValidator, validations } from 'redux-form-validation-with-fieldarray';
 
 const validate = createReduxFormValidator({
   firstname: [validations.required, validations.alphabet],
-  lastname: [validations.required, validations.alphabet],
+  lastname: (lastname, formData) => {
+    // you can access to value from first parameter and all form data from second parameter
+    // this is just dummy example
+    const validationArray = [validations.required];
+    if (lastname && ((lastname.indexOf('123')) || (lastname.indexOf('123') === 0))) {
+      validationArray.push(validations.alphabet);
+    }
+    console.log(lastname, formData);
+    return validationArray;
+  },
   // This is for FieldArray components
-  people: {
-    name: [validations.required, validations.alphabet],
-    value: [validations.required]
+  children: {
+    name: (name, formData, index) => {
+      // in FieldArray item you can access to value from first parameter and all form data from second parameter
+      // and access to index of item from third parameter.
+      console.log(name, formData, index);
+      return [validations.required, validations.alphabet];
+    },
+    phone_number: [validations.required, validations.integer]
   },
 });
 export default validate;
@@ -34,6 +54,7 @@ export default validate;
 ```
 
 And in your form component:
+
 ```js
 
 import React, { PureComponent } from 'react';
