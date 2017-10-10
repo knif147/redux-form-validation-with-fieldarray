@@ -20,7 +20,7 @@ You can pass a function and access to values (maybe needed) or pass an array wit
 You can write your custom functions. <br />
 You can access to another values from a field. <br />
 Note: if you want pass a function, your function should return an array. <br />
-We have two validations example.
+We have two validations example:
 
 ```js
 
